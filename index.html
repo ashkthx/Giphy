@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Giphy Search</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <title class="text-black">Giphy Search</title>
+
+
+        <div class="container">
+            <div id="header">
+
+                <h1 class="text-black">GIPHY Search!</h1>
+
+                <div class="instructions m-0">
+                    <h3 class="text-black">
+                        <br>
+                        In a world full of gifs, let's make the search easier!
+                        <br><br>
+                        Click the buttons or type something into the search fieldto display that perfect GIPHY!
+                        <br><br>
+                        Click the GIPHYs once to make them move, then again to stop them.
+                        <br><br>
+
+                    </h3>
+                </div>
+
+            </div>
+
+            <form class="form-inline" id="Search">
+
+                <div class="form-group">
+                    <label for="reactionInput" class="text-black m-2 "></label>
+                    <input type="text" id="reactionInput">
+                </div>
+                <input class="btn btn-gradient-light border border-dark ml-1" id="submitSearch" type="submit" value="Search">
+
+            </form>
+        </div>
+
+
+        <div class="row">
+            <div class="container">
+                <div class="btn-group inline pull-left">
+                    <div id="myButtons"></div>
+                </div> <!--end of button group -->
+            </div> <!--end of container -->
+        </div> <!--end of row -->
+        
+    </div>
+    <div class="row">
+        <div class="container">
+            <span>
+                <row id="gifResults"></row>
+            </span>
+        </div> <!--end of container -->
+    </div> <!-- end of row  -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
