@@ -1,4 +1,4 @@
-var topics = ["yes", "no", "happy", "shrug", "facepalm"];
+var topics = ["yes", "no", "happy", "facepalm", "shrug"];
 
 //Function to display gifs
 function displayReactions() {
@@ -6,17 +6,19 @@ function displayReactions() {
     var queryURL =
         "https://api.giphy.com/v1/gifs/search?q=" +
         reaction +
-        "&api_key=GmXLgDD3YEWnElW37802fljmKykccnAp";
+        "&api_key=GmXLgDD3YEWnElW37802fljmKykccnAp&limit=200";
 
     //AJAX call to Giphy
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
 
-        //Div to hold the gifs
-        for (var i = 0; i < 10; i++) {
+        //Random number generated so that you can get different gifs instead of just the first 10
+        var randomNum = Math.floor( Math.random()*50);
+
+        //Creating the div to hold the gifs
+        for ( i = randomNum; i < randomNum + 10; i++) {
             var newReaction = $("<div>");
             newReaction.addClass("newReaction");
             //Rating
@@ -35,10 +37,10 @@ function displayReactions() {
                 response.data[i].images.fixed_width.url
             );
             reactionImgage.attr(".img-thumbnail");
-
             newReaction.append(reactionRating);
             newReaction.append(reactionImgage);
             $("#gifResults").prepend(newReaction);
+
         }
     });
 };
@@ -60,14 +62,14 @@ function renderButtons() {
     }
 };
 
-//On click fucntion
+//Click event to take user input in the search field
 $("#submitSearch").on("click", function (event) {
     event.preventDefault();
     //Get input from user
     var reaction = $("#reactionInput")
         .val()
         .trim();
-    //Push new input to the topics array
+    //Push new input to the topics array and make a new button
     topics.push(reaction);
     renderButtons();
 });
