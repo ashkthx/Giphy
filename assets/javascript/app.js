@@ -18,7 +18,7 @@ function displayReactions() {
         var randomNum = Math.floor( Math.random()*50);
 
         //Creating the div to hold the gifs
-        for ( i = randomNum; i < randomNum + 10; i++) {
+        for (i = randomNum; i < randomNum + 10; i++) {
             var newReaction = $("<div>");
             newReaction.addClass("newReaction");
             //Rating
